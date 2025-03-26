@@ -47,7 +47,7 @@ public class Avoidance : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 5.0f * Time.deltaTime);
 
         transform.position += transform.forward * curSpeed;
-        transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 
     }
 
