@@ -17,10 +17,19 @@ public class AvoidancePath : MonoBehaviour
     public float force = 50.0f;
     public float minimumDistToAvoid = 10.0f;
 
+    public bool race = false;
+    [Range(5, 30)]
+    public int maxPotentiolSpeed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pathLength = path.Length;
+
+        if (race) 
+        {
+            speed = Random.Range(5.0f, maxPotentiolSpeed);
+        }
     }
 
     // Update is called once per frame
