@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AvoidancePath : MonoBehaviour
 {
@@ -21,19 +22,19 @@ public class AvoidancePath : MonoBehaviour
     [Range(5, 30)]
     public int maxPotentiolSpeed;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Start() 
     {
         pathLength = path.Length;
 
-        if (race) 
+        if (race)
         {
             speed = Random.Range(5.0f, maxPotentiolSpeed);
         }
     }
 
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {   
         targetPoint = path.GetPoint(curPathIndex);
 
