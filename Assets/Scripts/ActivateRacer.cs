@@ -9,11 +9,13 @@ public class ActivateRacer : MonoBehaviour
     private void OnEnable()
     {
         RaceController.onRaceStart += StartRace;
+        RaceController.onRaceEnd += EndRace;
     }
 
     private void OnDisable()
     {
         RaceController.onRaceStart -= StartRace;
+        RaceController.onRaceEnd -= EndRace;
     }
 
     private void Start()
@@ -25,11 +27,19 @@ public class ActivateRacer : MonoBehaviour
     {
         if (avoidancePathScript != null)
         {
-            avoidancePathScript.enabled = true;
+            avoidancePathScript.enabled = true;            
         }
         if (playerController != null) 
         {
-            playerController.enabled = true;
+            playerController.enabled = true;            
+        }
+    }
+
+    void EndRace() 
+    {  
+        if (playerController != null)
+        {            
+            playerController.maxSpeed = 0;
         }
     }
 }

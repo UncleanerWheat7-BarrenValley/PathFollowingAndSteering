@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class LightsController : MonoBehaviour
 {
-    public RaceController raceController;
+    public RaceController raceController;    
 
     public void StartRace()
     {
         raceController.StartRace();
     }
-
 }
